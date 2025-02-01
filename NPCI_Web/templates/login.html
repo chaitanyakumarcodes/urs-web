@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - Vendor Portal{% endblock %}
+
+{% block content %}
+    <div class="login-container">
+        <h2>Vendor Login</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}

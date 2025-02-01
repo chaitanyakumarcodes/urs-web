@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Vendor Transactions{% endblock %}
+
+{% block content %}
+    <h1>Transactions</h1>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+        {% for txn in transactions %}
+        <tr>
+            <td>{{ txn.amount }}</td>
+            <td>{{ txn.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

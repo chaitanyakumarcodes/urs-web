@@ -1,0 +1,72 @@
+/* Existing login styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+/* New styles for home page */
+.home-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.home-container h1 {
+    font-size: 2.5em;
+    color: #007bff;
+}
+
+.home-container p {
+    font-size: 1.2em;
+}
+
+.home-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.1em;
+}
+
+.home-links a:hover {
+    color: #0056b3;
+}

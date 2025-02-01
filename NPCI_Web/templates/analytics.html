@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Analytics{% endblock %}
+
+{% block content %}
+    <h1>Analytics</h1>
+    <p><b>Total Transactions:</b> {{ analytics.total_transactions }}</p>
+    <p><b>Total Sales:</b> ₹{{ analytics.total_sales }}</p>
+    <p><b>Total Rewards Issued:</b> {{ analytics.total_rewards_issued }}</p>
+    <p><b>Total Rewards Redeemed:</b> {{ analytics.total_rewards_redeemed }}</p>
+{% endblock %}
