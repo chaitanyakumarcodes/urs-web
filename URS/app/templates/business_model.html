@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URS Business Model Explanation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold text-center mb-12">Welcome to URS Rewards Program</h1>
+            
+            <!-- Business Types Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Small Business Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-blue-500">
+                    <h2 class="text-2xl font-bold text-blue-600 mb-4">Small Business</h2>
+                    <div class="space-y-3">
+                        <p class="font-bold text-lg mb-2">Key Features:</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Minimum Transaction: ₹20</li>
+                            <li>Threshold Amount: ₹50</li>
+                            <li>Earn Rate: 5-10%</li>
+                            <li>Redeem Rate: 5%</li>
+                            <li>Daily Points Limit: 1,000</li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">Perfect for cafes, small shops, and local retailers</p>
+                    </div>
+                </div>
+
+                <!-- Medium Business Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-green-500">
+                    <h2 class="text-2xl font-bold text-green-600 mb-4">Medium Business</h2>
+                    <div class="space-y-3">
+                        <p class="font-bold text-lg mb-2">Key Features:</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Minimum Transaction: ₹50</li>
+                            <li>Threshold Amount: ₹100</li>
+                            <li>Earn Rate: 10-15%</li>
+                            <li>Redeem Rate: 10%</li>
+                            <li>Daily Points Limit: 2,500</li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">Ideal for restaurants and medium retailers</p>
+                    </div>
+                </div>
+
+                <!-- Large Business Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-purple-500">
+                    <h2 class="text-2xl font-bold text-purple-600 mb-4">Large Business</h2>
+                    <div class="space-y-3">
+                        <p class="font-bold text-lg mb-2">Key Features:</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Minimum Transaction: ₹100</li>
+                            <li>Threshold Amount: ₹200</li>
+                            <li>Earn Rate: 15-20%</li>
+                            <li>Redeem Rate: 15%</li>
+                            <li>Daily Points Limit: 5,000</li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">Designed for large retailers and chains</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works Section -->
+            <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-bold mb-6">How It Works</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-500 mb-2">1</div>
+                        <h3 class="font-bold mb-2">Customer Purchase</h3>
+                        <p>Customer makes a purchase above the threshold amount</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-green-500 mb-2">2</div>
+                        <h3 class="font-bold mb-2">Points Earned</h3>
+                        <p>Points are automatically calculated based on purchase amount</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-purple-500 mb-2">3</div>
+                        <h3 class="font-bold mb-2">Redeem Rewards</h3>
+                        <p>Customers can redeem points for discounts on future purchases</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="text-center space-x-4">
+                <a href="{{ url_for('business_model_confirmation') }}" 
+                   class="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-600">
+                    Proceed with Registration
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

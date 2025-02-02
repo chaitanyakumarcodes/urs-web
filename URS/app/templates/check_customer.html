@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URS - Check Customer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-semibold">URS Dashboard</span>
+                </div>
+                <div class="flex items-center">
+                    <a href="{{ url_for('dashboard') }}" class="mr-4 text-blue-500 hover:text-blue-700">Back to Dashboard</a>
+                    <a href="{{ url_for('logout') }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 py-6">
+        <div class="bg-white rounded-lg shadow p-6">
+            <h1 class="text-2xl font-bold mb-6">Check Customer Membership</h1>
+            
+            <form method="POST" class="mb-6">
+                <div class="flex items-center space-x-4">
+                    <label for="phone" class="font-medium">Enter Customer Phone Number:</label>
+                    <input type="text" name="phone" required 
+                           class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" 
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Check
+                    </button>
+                </div>
+            </form>
+
+            {% if customer %}
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h2 class="text-xl font-bold mb-4">Customer Details</h2>
+                    <div class="space-y-2">
+                        <p><strong>Name:</strong> {{ customer.name }}</p>
+                        <p><strong>Phone:</strong> {{ customer.phone }}</p>
+                        <p><strong>Wallet Balance:</strong> ₹{{ customer.wallet_balance }}</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Apply Discount</h3>
+                    <form method="POST" action="{{ url_for('apply_discount') }}" class="space-y-4">
+                        <input type="hidden" name="phone" value="{{ customer.phone }}">
+                        
+                        <div class="flex items-center space-x-4">
+                            <label for="bill_amount" class="font-medium">Bill Amount (₹):</label>
+                            <input type="number" name="bill_amount" required 
+                                   class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <label class="font-medium">Points Used:</label>
+                            <p class="text-red-500 font-bold">- ₹{{ customer.wallet_balance }}</p>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <label class="font-medium">Final Amount After Discount:</label>
+                            <p class="text-green-500 font-bold">₹<span id="final_amount"></span></p>
+                        </div>
+
+                        <button type="submit" 
+                                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                            Apply Discount
+                        </button>
+                    </form>
+                </div>
+            {% endif %}
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="mt-4 p-4 rounded-lg {% if category == 'success' %}bg-green-100 text-green-700{% else %}bg-red-100 text-red-700{% endif %}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const walletBalance = parseFloat("{{ customer.wallet_balance }}");
+            const billAmountInput = document.querySelector("input[name='bill_amount']");
+            const finalAmountElement = document.getElementById("final_amount");
+
+            billAmountInput.addEventListener("input", function () {
+                let billAmount = parseFloat(billAmountInput.value) || 0;
+                let discount = Math.min(walletBalance, billAmount);
+                let finalAmount = billAmount - discount;
+                finalAmountElement.textContent = finalAmount.toFixed(2);
+            });
+        });
+    </script>
+</body>
+</html>
