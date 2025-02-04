@@ -30,9 +30,8 @@ To get the Firebase configuration details like `apiKey`, `authDomain`, `projectI
    ```
    - Use this `firebaseConfig` object in your JavaScript code to initialize Firebase.
 
-Let me know if you need further help with Firebase setup!
 
-The JSON configuration you're showing is a **Firebase Service Account Key** used for server-side authentication when interacting with Firebase services like Firestore, Firebase Admin SDK, and more. To generate and download this key, follow these steps:
+The JSON configuration consists **Firebase Service Account Key** used for server-side authentication when interacting with Firebase services like Firestore, Firebase Admin SDK, and more. To generate and download this key, follow these steps:
 
 1. **Go to Firebase Console:**
    - Open the [Firebase Console](https://console.firebase.google.com/).
