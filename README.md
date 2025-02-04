@@ -69,6 +69,7 @@ The JSON configuration consists **Firebase Service Account Key** used for server
   "universe_domain": "googleapis.com"
 }
 
+
 ### Important Note:
 - Never expose your service account keys publicly, as they grant full access to your Firebase project.
 - If you accidentally expose or lose the key, regenerate it from the same page to ensure your project's security.
