@@ -1,4 +1,4 @@
-### **Report on the URS Application: Vendor Registration & Dashboard**
+### **URS Application: Vendor Registration & Dashboard**
 
 #### **Overview:**
 The code provided outlines the URS (Unified Rewards System) application: the Vendor Registration page and the Analytics Dashboard. This system is designed to allow vendors to register, manage their transactions, and monitor key metrics via visual analytics and charts.
