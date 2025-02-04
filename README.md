@@ -55,6 +55,9 @@ The JSON configuration consists **Firebase Service Account Key** used for server
 7. **Use the Key in Your Project:**
    - You can now use this file in your Firebase Admin SDK setup to authenticate your server-side application with Firebase services.
   
+Here’s a dummy example of a service account key JSON:
+
+```json
 {
   "type": "service_account",
   "project_id": "dummy-project-id",
@@ -68,10 +71,6 @@ The JSON configuration consists **Firebase Service Account Key** used for server
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dummy-firebase-adminsdk%40dummy-project-id.iam.gserviceaccount.com",
   "universe_domain": "googleapis.com"
 }
+```
 
-
-### Important Note:
-- Never expose your service account keys publicly, as they grant full access to your Firebase project.
-- If you accidentally expose or lose the key, regenerate it from the same page to ensure your project's security.
-
-Let me know if you need further guidance!
+This is a dummy structure with placeholder values to help you understand the format of the service account key JSON. You would replace the values with the actual credentials you obtain from the Google Cloud Console.
