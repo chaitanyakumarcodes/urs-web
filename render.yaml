@@ -1,0 +1,9 @@
+services:
+     - type: web
+       name: urs-app
+       env: python
+       buildCommand: pip install -r requirements.txt
+       startCommand: gunicorn index:app
+       envVars:
+         - key: FIREBASE_CREDENTIALS
+           sync: false
